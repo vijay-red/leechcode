@@ -1,3 +1,3 @@
-# leetcode-baby
+# leechcode
 
-A copy of leetcode for every company for hiring process.
+Free leetcode
