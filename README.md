@@ -29,4 +29,4 @@ Team Members
  - Yash Tibrewal
  - Harish Reddy
  - Erik Rosa
- - Vijay Reddy
+ - Vijay Raghav Reddy
