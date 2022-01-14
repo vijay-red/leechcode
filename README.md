@@ -20,6 +20,11 @@ we plan to make the following
   - user management (login)
   - user creation (creating user for students who have applied to companies)
 
+The stack which is decided is
+Angular for frontend
+Mongodb for database
+Go for backend
+
 Team Members
 Yash Tibrewal
 Harish Reddy
