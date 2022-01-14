@@ -26,7 +26,7 @@ Mongodb for database
 Go for backend
 
 Team Members
-Yash Tibrewal
-Harish Reddy
-Erik
-Vijay Reddy
+ - Yash Tibrewal
+ - Harish Reddy
+ - Erik
+ - Vijay Reddy
