@@ -27,6 +27,6 @@ Go for backend
 
 Team Members
  - Yash Tibrewal
- - Harish Reddy
+ - Harish Reddy Bollavaram
  - Erik Rosa
  - Vijay Raghav Reddy
