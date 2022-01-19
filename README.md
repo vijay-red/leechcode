@@ -32,6 +32,6 @@ Running the Frontend:
 
 Team Members
  - Yash Tibrewal
- - Harish Reddy
+ - Harish Reddy Bollavaram
  - Erik Rosa
- - Vijay Reddy
+ - Vijay Raghav Reddy
