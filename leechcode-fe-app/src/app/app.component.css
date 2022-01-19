@@ -1,0 +1,14 @@
+.code-input{
+    width: 500px; 
+    height: 500px;
+}
+.problem-desc{
+    width: 500px;
+}
+
+#problem-structure{
+    display: flex;
+} 
+.code-sub{
+    display: contents;
+}

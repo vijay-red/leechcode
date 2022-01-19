@@ -25,6 +25,11 @@ Angular for frontend
 Mongodb for database
 Go for backend
 
+Running the Frontend:
+1. CD into leechcode-fe-app.
+2. Run `npm install` to downloaded necessary packages.
+3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 Team Members
  - Yash Tibrewal
  - Harish Reddy
