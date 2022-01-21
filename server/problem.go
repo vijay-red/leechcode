@@ -1,4 +1,4 @@
-package problem
+package main
 
 type Problem struct {
 	QuestionId       string `json:"questionId"`
