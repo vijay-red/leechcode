@@ -22,7 +22,7 @@ we plan to make the following
 
 The stack which is decided is
 Angular for frontend
-Mongodb for database
+~~Mongodb~~ cockroachDB for database
 Go for backend
 
 Running the Frontend:
