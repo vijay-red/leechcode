@@ -1,7 +1,9 @@
 package main
 
+import "gorm.io/gorm"
+
 type Problem struct {
-	QuestionId       string `json:"questionId"`
+	gorm.Model       `json:"-"`
 	Title            string `json:"title"`
 	TitleSlug        string `json:"titleSlug"`
 	Content          string `json:"content"`
