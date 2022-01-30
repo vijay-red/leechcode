@@ -27,8 +27,10 @@ Go for backend
 
 Running the Frontend:
 1. CD into leechcode-fe-app.
-2. Run `npm install` to downloaded necessary packages.
-3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2. Install nodejs from `https://nodejs.org/en/`
+3. Run `npm install` to downloaded necessary packages.
+4. If angular cli is not installed, install the client using `npm install -g @angular/cli`
+4. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Running the Backend:
 1. You need to install docker.
