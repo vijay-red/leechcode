@@ -1,8 +1,8 @@
 package main
 
 import (
-	db "leechcode/db"
-	handlers "leechcode/handlers"
+	"leechcode/db"
+	"leechcode/handlers"
 )
 
 func main() {
