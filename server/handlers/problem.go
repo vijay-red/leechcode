@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"errors"
@@ -7,20 +7,22 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
+
+	db "leechcode/db"
 )
 
 func FindProblem(c *gin.Context) {
-	var problems []Problem
-	DB.Find(&problems)
+	var problems []db.Problem
+	db.DB.Find(&problems)
 	c.JSON(http.StatusOK, gin.H{
 		"data": problems})
 }
 
 func FindProblemBySlug(c *gin.Context) {
-	var problem Problem
+	var problem db.Problem
 	id := c.Param("id")
 
-	err := DB.First(&problem, "title_slug = ?", id).Error
+	err := db.DB.First(&problem, "title_slug = ?", id).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		c.JSON(404, gin.H{"data": nil})
 		return
@@ -29,14 +31,14 @@ func FindProblemBySlug(c *gin.Context) {
 }
 
 func CreateProblem(c *gin.Context) {
-	var input Problem
+	var input db.Problem
 
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 	fmt.Println(input)
-	DB.Create(&input)
+	db.DB.Create(&input)
 	c.JSON(http.StatusOK, gin.H{"data": input})
 }
 
