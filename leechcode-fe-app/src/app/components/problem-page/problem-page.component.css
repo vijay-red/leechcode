@@ -1,0 +1,16 @@
+.lefthandside{
+    width:40%;
+}
+.righthandside{
+    width:60%;
+    height: 100%;
+    background-color: aqua;
+    border: 2px aqua;
+}
+.problem-canvas{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}

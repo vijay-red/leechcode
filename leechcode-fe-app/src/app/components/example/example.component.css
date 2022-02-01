@@ -1,0 +1,15 @@
+.example-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-family: Ubuntu;
+}
+
+.example-box{
+    background-color: #C4C4C4;
+    padding: 5px;
+    border-radius: 20px;
+    width:100%;
+    height:100%;
+    margin: 20px;
+}
