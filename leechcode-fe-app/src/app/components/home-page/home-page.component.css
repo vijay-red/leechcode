@@ -7,3 +7,116 @@
     background-color: aqua;
     border: 2px aqua;
 }
+.box{
+    /* octahedron 1 */
+
+position: static;
+width: 74px;
+height: 74px;
+left: 35px;
+top: 105.85px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 0px 0px;
+}
+.title{
+    position: static;
+    width: 173px;
+    height: 80px;
+    left: 135px;
+    top: 179.85px;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 80px;
+    /* identical to box height, or 267% */
+    display: flex;
+    align-items: center;
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+.background{
+    /* Browser Window */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 30px 35px;
+
+position: static;
+width: 1868;
+height: 730px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(0deg, rgba(255, 139, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, #0200C6 0%, rgba(196, 196, 196, 0) 100%);
+border-radius: 1px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+}
+.navbar{
+    position: static;
+width: 1296px;
+height: 75.85px;
+left: 35px;
+top: 30px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+}
+.pages{
+    /* Pages */
+
+position: absolute;
+width: 985px;
+height: 60px;
+left: 346px;
+top: 38px;
+
+}
+
+.aboutus{
+    position: absolute;
+width: 118px;
+height: 30px;
+left: 346px;
+top: 53px;
+background-color: Transparent;
+border: none;
+cursor: pointer;
+overflow: hidden;
+outline: none;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+font-size: 25px;
+line-height: 30px;
+display: flex;
+align-items: center;
+text-transform: capitalize;
+
+color: #ffffff;
+}
