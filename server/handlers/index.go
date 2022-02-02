@@ -10,6 +10,7 @@ func RunRouter() {
 	routerGroup := router.Group("/api/v1")
 	AddProblemPaths(routerGroup)
 	AddSolutionPaths(routerGroup)
+	AddCompilersPaths(routerGroup)
 	router.Run()
 }
 func AddSolutionPaths(routerGroup *gin.RouterGroup) {
@@ -22,4 +23,8 @@ func AddProblemPaths(routerGroup *gin.RouterGroup) {
 	routerGroup.POST("problems", CreateProblem)
 	routerGroup.PUT("problems/:id", UpdateProblem)
 	routerGroup.DELETE("problems/:id", DeleteProblem)
+}
+
+func AddCompilersPaths(routerGroup *gin.RouterGroup) {
+	routerGroup.GET("compilers", GetAllCompilers)
 }

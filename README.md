@@ -37,7 +37,7 @@ Running the Backend:
 2. From the root directory of the project, do `docker-compose build`
 3. `docker-compose up`
 4. The server will be up and running on port 8080. 
-5. If you wanna check test the rest end points in style, install rest-client plugin for VS code, and open `route.rest` file.
+5. If you wanna check test the rest end points in style, install rest-client plugin for VS code, and open `**.rest` files in server -> documentation.
 
 
 Team Members

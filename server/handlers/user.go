@@ -2,15 +2,18 @@ package handlers
 
 import (
 	"fmt"
-	db "leechcode/db"
+	"leechcode/db"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
 func SubmitSolution(c *gin.Context) {
-	var input db.Submitted_Solution
+	// Create an entry for the user solution
+	// compile the solution
+	// return back the test results
 
+	var input db.SubmittedSolution
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
