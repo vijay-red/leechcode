@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/theme/material';
+.CodeMirror {
+    flex:1;
+    max-height:100%;
+    max-width: 90%;
+}
+
+.CodeMirror-wrap pre {
+    word-break: break-word;
+}

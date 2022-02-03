@@ -1,0 +1,33 @@
+<div class="problem-canvas">
+    <div class="tab-menu">
+        <div *ngFor="let tab of tabs">
+            <button [className]="(selectedTab === tab) ? 'tab-selected' : 'tab'" (click)="openTab(tab)" href="#">{{
+            tab
+          }}</button>
+        </div>
+        
+    </div>
+  <ng-container *ngIf="selectedTab === 'Description'">
+    <div class="DescriptionTab">
+      <div class="lefthandside">
+        <app-problem-statement></app-problem-statement>
+      </div>
+      <div class="righthandside">
+      <ngx-codemirror
+      class="editor"
+        [(ngModel)]="originalCode"
+        [options]="{
+          lineNumbers: true,
+          theme: 'material',
+          mode: 'markdown',
+          lineWrapping: true
+        }"
+      ></ngx-codemirror>
+    </div>
+    </div>
+
+    
+  </ng-container>
+  <ng-container *ngIf="selectedTab === 'Solution'">Solution</ng-container>
+  <ng-container *ngIf="selectedTab === 'Discuss'">Solution</ng-container>
+</div>
