@@ -42,6 +42,7 @@ func CreateProblem(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": input})
 }
 
+// TODO: Implement the function
 func UpdateProblem(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "updatePerson Called"})
 }

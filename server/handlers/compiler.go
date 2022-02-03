@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -17,25 +16,24 @@ type SupportLanguage struct {
 	Aliases  []string `json:"aliases"`
 }
 
+func panicIfNotNill(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
 func GetAllCompilers(context *gin.Context) {
 	var url string = "http://" + os.Getenv("PISTON_CONTAINER") + "/api/v2/runtimes"
-	fmt.Println("url:" + url)
 	response, err := http.Get(url)
-	if err != nil {
-		panic(err)
-	}
-
+	panicIfNotNill(err)
 	b, err := io.ReadAll(response.Body)
-	if err != nil {
-		panic(err)
-	}
+	panicIfNotNill(err)
 	var supportLanguages []SupportLanguage
 	json.Unmarshal(b, &supportLanguages)
-
-	fmt.Println("body:" + string(b))
-	if err != nil {
-		fmt.Print(err.Error())
-	}
-
+	panicIfNotNill(err)
 	context.JSON(http.StatusOK, gin.H{"result": supportLanguages})
+}
+
+func PostSubmissionAndGetResults(context *gin.Context) {
+
 }

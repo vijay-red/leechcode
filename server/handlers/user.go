@@ -13,7 +13,7 @@ func SubmitSolution(c *gin.Context) {
 	// compile the solution
 	// return back the test results
 
-	var input db.SubmittedSolution
+	var input db.Solution
 	if err := c.ShouldBindJSON(&input); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
