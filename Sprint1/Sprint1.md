@@ -10,3 +10,13 @@ Sprint 1 Review
     - Implemented Problem Page: https://github.com/yashtibrewal/leechcode/issues/2
     - Implemented universal app component that will serve as a template for the rest of the pages: 7586c47b5433a933c266645aace02aede52c49e2 
 
+- Backend Goals:
+    - Designing APIs
+    - Designing Databases
+- Backend Completed Tasks:
+    - Create and Read a Problem
+    - Create a test case for a problem
+    - Get all the languages supported
+    - Setting up the database
+    - Setting up docker
+    - API docs are present under server/api_documentation
