@@ -4,11 +4,9 @@ FROM golang:latest
 
 WORKDIR /app
 
-COPY server/go.mod ./
-COPY server/go.sum ./
-RUN go mod download
+ADD server ./
 
-COPY server/*.go ./
+RUN go mod download
 
 RUN go build -o /docker-leechcode
 

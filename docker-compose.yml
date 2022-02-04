@@ -28,3 +28,15 @@ services:
     restart: always
     ports:
       - 8081:8081
+
+  api:
+      image: ghcr.io/engineer-man/piston
+      container_name: piston_api
+      restart: always
+      ports:
+          - 2000:2000
+      volumes:
+          - ./data/piston:/piston
+      tmpfs:
+          - /piston/jobs:exec
+          - /tmp:exec
