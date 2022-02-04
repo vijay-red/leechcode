@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'leechcode-fe-app';
+  tabs = ['Home','Solution','Problem'];
+  selectedTab = 'Home';
+
+  openTab(tab:any){
+    this.selectedTab = tab;
+  }
 }

@@ -1,17 +1,55 @@
-.code-input{
-    width: 500px; 
-    height: 500px;
-}
-.problem-desc{
-    width: 500px;
+.app {
+  /* Browser Window */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  background: linear-gradient(
+      0deg,
+      rgba(255, 139, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(180deg, #0200c6 0%, rgba(196, 196, 196, 0) 100%) center
+      center fixed;
 }
 
-#problem-structure{
-    display: flex;
-} 
-.code-sub{
-    display: contents;
+.navbar {
+  display: flex;
+  position:fixed;
+  margin-top: 2%;
+  margin-left: 5%;
+  align-self: flex-start;
+  flex: 1;
 }
-.app{
-    height: 100%;
+.navbar-button {
+  font-size: 25px;
+  border: none;
+  background-color: Transparent;
+  padding-left: 10%;
+  padding-right: 10%;
+  outline: none;
+  font-family: Montserrat;
+  white-space: nowrap;
+  font-style: normal;
+  color: #ffffff;
+  flex: 1;
+}
+.home-button {
+  font-size: 25px;
+  border: none;
+  background-color: Transparent;
+  padding-right: 30%;
+  outline: none;
+  font-family: Montserrat;
+  font-style: normal;
+  color: #ffffff;
+  flex: 1;
 }

@@ -1,4 +1,7 @@
+
+
 <div class="problem-canvas">
+  
     <div class="tab-menu">
         <div *ngFor="let tab of tabs">
             <button [className]="(selectedTab === tab) ? 'tab-selected' : 'tab'" (click)="openTab(tab)" href="#">{{
@@ -23,6 +26,7 @@
           lineWrapping: true
         }"
       ></ngx-codemirror>
+      <button class="submit-button">Submit Code</button>
     </div>
     </div>
 
@@ -31,3 +35,4 @@
   <ng-container *ngIf="selectedTab === 'Solution'">Solution</ng-container>
   <ng-container *ngIf="selectedTab === 'Discuss'">Solution</ng-container>
 </div>
+
