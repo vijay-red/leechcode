@@ -14,9 +14,9 @@ Sprint 1 Review
     - Designing APIs
     - Designing Databases
 - Backend Completed Tasks:
-    - Create and Read a Problem
-    - Create a test case for a problem
-    - Get all the languages supported
-    - Setting up the database
+    - CRUD a Problem. #11. #1
+    - Create a test case for a problem #19
+    - Get all the languages supported #14
+    - Setting up the database 
     - Setting up docker
     - API docs are present under server/api_documentation
