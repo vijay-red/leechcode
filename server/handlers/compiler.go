@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"os"
 
+	"leechcode/db"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,24 +18,59 @@ type SupportLanguage struct {
 	Aliases  []string `json:"aliases"`
 }
 
-func panicIfNotNill(err error) {
+func sendErrorIfNotNill(err error, context *gin.Context) {
 	if err != nil {
-		panic(err)
+		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
 }
 
 func GetAllCompilers(context *gin.Context) {
 	var url string = "http://" + os.Getenv("PISTON_CONTAINER") + "/api/v2/runtimes"
 	response, err := http.Get(url)
-	panicIfNotNill(err)
+
+	sendErrorIfNotNill(err, context)
+	if err != nil {
+		return
+	}
+
 	b, err := io.ReadAll(response.Body)
-	panicIfNotNill(err)
+
+	sendErrorIfNotNill(err, context)
+	if err != nil {
+		return
+	}
+
 	var supportLanguages []SupportLanguage
 	json.Unmarshal(b, &supportLanguages)
-	panicIfNotNill(err)
+
+	sendErrorIfNotNill(err, context)
+	if err != nil {
+		return
+	}
+
 	context.JSON(http.StatusOK, gin.H{"result": supportLanguages})
 }
 
 func PostSubmissionAndGetResults(context *gin.Context) {
+	var input db.Solution
+
+	err := context.ShouldBindJSON(&input)
+	sendErrorIfNotNill(err, context)
+	if err != nil {
+		return
+	}
+
+	// creating an entry in the db
+	db.DB.Create(input)
+
+	context.JSON(http.StatusOK, gin.H{"message": "Solution has been submitted"})
+	// TODO: implement the following
+	// get the test case
+
+	// calling the piston service to obtain result
+
+	// var url string = "http://" + os.Getenv("PISTON_CONTAINER") + "/api/v2/runtimes"
+
+	// create an entry of the executed result and return to in the api
 
 }

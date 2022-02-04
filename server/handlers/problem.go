@@ -30,16 +30,16 @@ func FindProblemBySlug(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": problem})
 }
 
-func CreateProblem(c *gin.Context) {
+func CreateProblem(context *gin.Context) {
 	var input db.Problem
 
-	if err := c.ShouldBindJSON(&input); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	if err := context.ShouldBindJSON(&input); err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 	fmt.Println(input)
 	db.DB.Create(&input)
-	c.JSON(http.StatusOK, gin.H{"data": input})
+	context.JSON(http.StatusOK, gin.H{"data": input})
 }
 
 // TODO: Implement the function

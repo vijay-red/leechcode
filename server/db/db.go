@@ -28,5 +28,8 @@ func ConnectDatabase() {
 		panic(err.Error())
 	}
 	DB.AutoMigrate(&Problem{})
+	DB.AutoMigrate(&TestCase{})
+	DB.AutoMigrate(&Solution{})
+	DB.AutoMigrate(&User{})
 	fmt.Println("Connected to database.")
 }
