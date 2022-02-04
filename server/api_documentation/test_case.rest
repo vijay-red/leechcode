@@ -10,3 +10,24 @@ Content-Type: application/json
         "1"
     ]
 }
+
+### Result
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 04 Feb 2022 03:32:05 GMT
+Content-Length: 167
+Connection: close
+
+{
+  "data": {
+    "ID": 3,
+    "CreatedAt": "2022-02-04T03:32:05.539134506Z",
+    "UpdatedAt": "2022-02-04T03:32:05.539134506Z",
+    "DeletedAt": null,
+    "problem_id": 2,
+    "stdin": "Test",
+    "args": [
+      "1"
+    ]
+  }
+}
