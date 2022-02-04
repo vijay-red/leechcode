@@ -20,3 +20,4 @@ Sprint 1 Review
     - Setting up the database 
     - Setting up docker
     - API docs are present under server/api_documentation
+    - Setting up piston docker and piston.
