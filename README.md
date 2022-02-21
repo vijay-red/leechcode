@@ -42,6 +42,6 @@ Running the Backend:
 
 Team Members
  - Yash Tibrewal
- - Harish Reddy Bollavaram
+ - Harish Reddy Bollavaram (harlsh)
  - Erik Rosa
  - Vijay Raghav Reddy
