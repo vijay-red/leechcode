@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type Submitted_Solution struct {
+type SubmittedSolution struct {
 	gorm.Model `json:"-"`
 	Solution   string    `json:"solution"`
 	CreatedAt  time.Time `sql:"DEFAULT:current_timestamp" json:"created_at"`

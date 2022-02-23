@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
-	db "leechcode/db"
+	"leechcode/db"
 )
 
 func FindProblem(c *gin.Context) {
