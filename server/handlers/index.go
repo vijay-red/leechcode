@@ -32,4 +32,6 @@ func AddCompilersPaths(routerGroup *gin.RouterGroup) {
 
 func AddTestCasePaths(routerGroup *gin.RouterGroup) {
 	routerGroup.POST("test-case", CreateTestCase)
+	routerGroup.GET("test-case/:id", GetTestCase)
+	routerGroup.GET("test-cases", GetTestCases)
 }
