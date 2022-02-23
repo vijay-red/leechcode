@@ -11,6 +11,7 @@ func RunRouter() {
 	AddProblemPaths(routerGroup)
 	AddSolutionPaths(routerGroup)
 	AddCompilersPaths(routerGroup)
+	AddTestCasePaths(routerGroup)
 	router.Run()
 }
 func AddSolutionPaths(routerGroup *gin.RouterGroup) {
@@ -27,4 +28,8 @@ func AddProblemPaths(routerGroup *gin.RouterGroup) {
 
 func AddCompilersPaths(routerGroup *gin.RouterGroup) {
 	routerGroup.GET("compilers", GetAllCompilers)
+}
+
+func AddTestCasePaths(routerGroup *gin.RouterGroup) {
+	routerGroup.POST("test-case", CreateTestCase)
 }
