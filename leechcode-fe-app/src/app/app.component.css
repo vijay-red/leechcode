@@ -53,3 +53,8 @@
   color: #ffffff;
   flex: 1;
 }
+
+.home-text {
+  position:absolute;
+  z-index:10;
+}

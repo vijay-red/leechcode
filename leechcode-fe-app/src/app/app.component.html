@@ -2,16 +2,13 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
   
     <div class="navbar">  
-      <button class="home-button"  (click)="openTab('Home')">LeechCode</button>     
-      <button class="navbar-button">About us</button>
-      <button class="navbar-button" (click)="openTab('Problem')">Problems</button>
-      <button class="navbar-button">Discuss</button>
-      <button class="navbar-button" >Sign in</button>
+      <button class="home-button"  routerLink="/home" >LeechCode</button>     
+      <button class="navbar-button" routerLink="/about">About us</button>
+      <button class="navbar-button" routerLink="/problem">Problems</button>
+      <button class="navbar-button" routerLink="/discuss">Discuss</button>
+      <button class="navbar-button" routerLink="/sign-in">Sign in</button>
 </div>
-  <ng-container *ngIf="selectedTab === 'Home'"><div style="margin-left: 5%;">
-    <app-home-page></app-home-page>
-  </div>
-</ng-container>
-  <ng-container *ngIf="selectedTab === 'Problem'"><app-problem-page></app-problem-page></ng-container>
+  
   
 </div>
+<router-outlet></router-outlet>

@@ -50,6 +50,8 @@
 
 .infolayout {
   margin-top: 20%;
+  position:absolute;
+  z-index: 10;
 }
 .infotext {
   position: static;
@@ -57,7 +59,7 @@
   height: 204px;
   left: 0px;
   top: 0px;
-  margin-left: 5%;
+  
 
   font-family: Montserrat;
   font-style: normal;
