@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProblemsApiService } from 'src/app/models/problems-api.service';
 import { Problem } from 'src/app/models/problem';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-prob-list',
   templateUrl: './admin-prob-list.component.html',
@@ -11,7 +12,7 @@ export class AdminProbListComponent implements OnInit {
   data: Object[] = []
   problems: Problem[] = []
 
-  constructor(private pa: ProblemsApiService) { }
+  constructor(private pa: ProblemsApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.pa.getProblems()
@@ -32,6 +33,10 @@ export class AdminProbListComponent implements OnInit {
   problemToJSON(json:string){
     var obj = JSON.parse(json);
     return new Problem(obj.title,obj.titleSlug,obj.content,obj.difficulty,obj.likes,obj.dislikes,obj.exampleTestCase,obj.hints);
+  }
+
+  updateProblem(titleSlug:string){
+    this.router.navigate(['admin/updateproblem/',titleSlug]);
   }
 
 }

@@ -14,6 +14,7 @@
             <th>id</th>
             <th>Title</th>
             <th>Difficulty</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,12 @@
                 <td>{{i}}</td>
                 <td>{{problem.title}}</td>
                 <td>{{problem.difficulty}}</td>
+                <td>
+                  <button (click) = "updateProblem(problem.titleSlug)" class = "btn btn-info">Update</button>
+                  <button (click) = "updateProblem(problem.titleSlug)" class = "btn btn-info" style="margin-left: 10px;">View</button>
+                  <button (click) = "updateProblem(problem.titleSlug)" class = "btn btn-danger" style="margin-left: 10px;">Delete</button>
+                </td>
+                
         </tr>
     </tbody>
 </table>

@@ -19,6 +19,7 @@ import { AdminPanelComponent } from './components/adminpanel/adminpanel.componen
 import { AdminProbListComponent } from './components/adminpanel/admin-prob-list/admin-prob-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateProblemComponent } from './components/adminpanel/create-problem/create-problem.component';
+import { UpdateProblemComponent } from './components/adminpanel/update-problem/update-problem.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CreateProblemComponent } from './components/adminpanel/create-problem/c
     ProblemListComponent,
     AdminPanelComponent,
     AdminProbListComponent,
-    CreateProblemComponent
+    CreateProblemComponent,
+    UpdateProblemComponent
   ],
   imports: [
     BrowserModule,
