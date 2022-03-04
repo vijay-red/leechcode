@@ -9,6 +9,7 @@ require (
 )
 
 require (
+	github.com/gin-contrib/cors v1.3.1 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/tools v0.1.1 // indirect

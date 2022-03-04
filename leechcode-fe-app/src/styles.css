@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~codemirror/lib/codemirror';
 @import '~codemirror/theme/material';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
 .CodeMirror {
     flex:1;
     margin-top: 10%;
@@ -11,3 +13,5 @@
 .CodeMirror-wrap pre {
     word-break: break-word;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
