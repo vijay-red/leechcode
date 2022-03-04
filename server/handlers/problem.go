@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,18 +10,22 @@ import (
 	"leechcode/db"
 )
 
-func FindProblem(c *gin.Context) {
+type ProblemRepository struct {
+	DB *gorm.DB
+}
+
+func (p *ProblemRepository) FindProblem(c *gin.Context) {
 	var problems []db.Problem
-	db.DB.Find(&problems)
+	p.DB.Find(&problems)
 	c.JSON(http.StatusOK, gin.H{
 		"data": problems})
 }
 
-func FindProblemBySlug(c *gin.Context) {
+func (p *ProblemRepository) FindProblemBySlug(c *gin.Context) {
 	var problem db.Problem
 	id := c.Param("id")
 
-	err := db.DB.First(&problem, "title_slug = ?", id).Error
+	err := p.DB.First(&problem, "title_slug = ?", id).Error
 	if errors.Is(err, gorm.ErrRecordNotFound) {
 		c.JSON(404, gin.H{"data": nil})
 		return
@@ -30,24 +33,38 @@ func FindProblemBySlug(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": problem})
 }
 
-func CreateProblem(context *gin.Context) {
+func (p *ProblemRepository) CreateProblem(context *gin.Context) {
 	var input db.Problem
 
 	if err := context.ShouldBindJSON(&input); err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	fmt.Println(input)
-	db.DB.Create(&input)
+	p.DB.Create(&input)
 	context.JSON(http.StatusOK, gin.H{"data": input})
 }
 
 // TODO: Implement the function
-func UpdateProblem(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"message": "updatePerson Called"})
+func (p *ProblemRepository) UpdateProblem(c *gin.Context) {
+	var input db.Problem
+	id := c.Param("id")
+
+	if err := c.ShouldBindJSON(&input); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	var deletedProb db.Problem
+
+	p.DB.Where("title_slug = ?", id).Delete(&deletedProb)
+
+	p.DB.Save(&input)
+	c.JSON(http.StatusOK, gin.H{"data": input})
 }
 
-func DeleteProblem(c *gin.Context) {
+func (p *ProblemRepository) DeleteProblem(c *gin.Context) {
 	id := c.Param("id")
-	c.JSON(http.StatusOK, gin.H{"message": "deletePerson " + id + " Called"})
+	var deletedProb db.Problem
+	p.DB.Where("title_slug = ?", id).Delete(&deletedProb)
+	c.JSON(http.StatusOK, gin.H{"data": deletedProb})
 }
