@@ -1,6 +1,7 @@
 package main
 
 import (
+	"leechcode/db"
 	"leechcode/handlers"
 
 	"github.com/gin-gonic/gin"
@@ -9,31 +10,28 @@ import (
 func RunRouter() {
 	gin.ForceConsoleColor()
 	router := gin.Default()
+
+	db.ConnectDatabase()
+
+	repo := &handlers.ProblemRepository{
+		DB: db.DB,
+	}
+
 	routerGroup := router.Group("/api/v1")
-	AddProblemPaths(routerGroup)
-	AddSolutionPaths(routerGroup)
-	AddCompilersPaths(routerGroup)
-	AddTestCasePaths(routerGroup)
-	router.Run()
-}
-func AddSolutionPaths(routerGroup *gin.RouterGroup) {
+
+	routerGroup.GET("problems", repo.FindProblem)
+	routerGroup.GET("problems/:id", repo.FindProblemBySlug)
+	routerGroup.POST("problems", repo.CreateProblem)
+	routerGroup.PUT("problems/:id", repo.UpdateProblem)
+	routerGroup.DELETE("problems/:id", repo.DeleteProblem)
+
 	routerGroup.POST("solution", handlers.SubmitSolution)
-}
 
-func AddProblemPaths(routerGroup *gin.RouterGroup) {
-	routerGroup.GET("problems", handlers.FindProblem)
-	routerGroup.GET("problems/:id", handlers.FindProblemBySlug)
-	routerGroup.POST("problems", handlers.CreateProblem)
-	routerGroup.PUT("problems/:id", handlers.UpdateProblem)
-	routerGroup.DELETE("problems/:id", handlers.DeleteProblem)
-}
-
-func AddCompilersPaths(routerGroup *gin.RouterGroup) {
 	routerGroup.GET("compilers", handlers.GetAllCompilers)
-}
 
-func AddTestCasePaths(routerGroup *gin.RouterGroup) {
 	routerGroup.POST("test-case", handlers.CreateTestCase)
 	routerGroup.GET("test-case/:id", handlers.GetTestCase)
 	routerGroup.GET("test-cases", handlers.GetTestCases)
+
+	router.Run()
 }

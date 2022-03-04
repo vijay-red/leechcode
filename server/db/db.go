@@ -33,3 +33,11 @@ func ConnectDatabase() {
 	DB.AutoMigrate(&User{})
 	fmt.Println("Connected to database.")
 }
+
+func ClearDatabase() {
+	DB.Delete(&Problem{})
+	DB.Delete(&TestCase{})
+	DB.Delete(&Solution{})
+	DB.Delete(&User{})
+	fmt.Println("Cleared the database.")
+}
