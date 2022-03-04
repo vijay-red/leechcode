@@ -46,10 +46,25 @@ func (p *ProblemRepository) CreateProblem(context *gin.Context) {
 
 // TODO: Implement the function
 func (p *ProblemRepository) UpdateProblem(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"message": "updatePerson Called"})
+	var input db.Problem
+	id := c.Param("id")
+
+	if err := c.ShouldBindJSON(&input); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	var deletedProb db.Problem
+
+	p.DB.Where("title_slug = ?", id).Delete(&deletedProb)
+
+	p.DB.Save(&input)
+	c.JSON(http.StatusOK, gin.H{"data": input})
 }
 
 func (p *ProblemRepository) DeleteProblem(c *gin.Context) {
 	id := c.Param("id")
-	c.JSON(http.StatusOK, gin.H{"message": "deletePerson " + id + " Called"})
+	var deletedProb db.Problem
+	p.DB.Where("title_slug = ?", id).Delete(&deletedProb)
+	c.JSON(http.StatusOK, gin.H{"data": deletedProb})
 }
