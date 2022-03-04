@@ -8,11 +8,14 @@ import { ProblemPageComponent } from './components/problem-page/problem-page.com
 import { ProblemStatementComponent } from './components/problem-statement/problem-statement.component';
 import { ExampleComponent } from './components/example/example.component';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
+import { ProblemsApiService } from './models/problems-api.service';
+import { AdminPanelComponent } from './components/adminpanel/adminpanel.component';
 
 
 @NgModule({
@@ -23,16 +26,18 @@ import { ProblemListComponent } from './components/problem-list/problem-list.com
     ExampleComponent,
     HomePageComponent,
     ProblemListComponent,
-    ProblemListComponent
+    ProblemListComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CodemirrorModule,
     MonacoEditorModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProblemsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
