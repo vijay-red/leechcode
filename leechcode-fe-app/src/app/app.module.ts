@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 
 
+
+
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { ProblemsApiService } from './models/problems-api.service';
@@ -44,7 +46,8 @@ import { UpdateProblemComponent } from './components/adminpanel/update-problem/u
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    
   ],
   providers: [ProblemsApiService],
   bootstrap: [AppComponent]

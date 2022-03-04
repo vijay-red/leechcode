@@ -9,6 +9,7 @@ import { UpdateProblemComponent } from './components/adminpanel/update-problem/u
 const routes: Routes = [{
   path: 'home', component: HomePageComponent
 }, {path: 'problem', component: ProblemPageComponent 
+}, {path: 'problem/:titleSlug', component: ProblemPageComponent 
 },{path: 'admin', component: AdminPanelComponent 
 },{path: 'admin/problemlist', component: AdminProbListComponent 
 },{path: 'admin/createproblem', component: CreateProblemComponent 

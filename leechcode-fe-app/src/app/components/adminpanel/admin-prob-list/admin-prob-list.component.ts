@@ -39,4 +39,8 @@ export class AdminProbListComponent implements OnInit {
     this.router.navigate(['admin/updateproblem/',titleSlug]);
   }
 
+  viewProblem(titleSlug:string){
+    this.router.navigate(['/problem/',titleSlug]);
+  }
+
 }
