@@ -1,10 +1,11 @@
-<div class="base">
+<div class="center-me">
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/admin/problemlist"  aria-current="page" href="#">Problem List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/createproblem" href="#">Create Problem</a>
+        </li>
+      </ul>
     
-    <table border="1">
-        <tr *ngFor= "let item of problems" >
-            <td> {{item.Title}}</td>
-            <td>{{item.TitleSlug}}</td>
-            <td>{{item.Difficulty}}</td>
-        </tr>
-    </table>
-</div>
+</div> 

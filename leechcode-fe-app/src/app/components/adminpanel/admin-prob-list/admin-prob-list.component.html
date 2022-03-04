@@ -1,0 +1,28 @@
+<div class="box">
+<div class="container">
+    <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/admin/problemlist"  aria-current="page" href="#">Problem List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/createproblem" href="#">Create Problem</a>
+        </li>
+      </ul>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let problem of problems;let i = index" [attr.data-index]="i">
+                <td>{{i}}</td>
+                <td>{{problem.title}}</td>
+                <td>{{problem.difficulty}}</td>
+        </tr>
+    </tbody>
+</table>
+</div></div>
+

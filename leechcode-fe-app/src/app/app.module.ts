@@ -9,13 +9,16 @@ import { ProblemStatementComponent } from './components/problem-statement/proble
 import { ExampleComponent } from './components/example/example.component';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { ProblemsApiService } from './models/problems-api.service';
 import { AdminPanelComponent } from './components/adminpanel/adminpanel.component';
+import { AdminProbListComponent } from './components/adminpanel/admin-prob-list/admin-prob-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateProblemComponent } from './components/adminpanel/create-problem/create-problem.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { AdminPanelComponent } from './components/adminpanel/adminpanel.componen
     HomePageComponent,
     ProblemListComponent,
     ProblemListComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    AdminProbListComponent,
+    CreateProblemComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,9 @@ import { AdminPanelComponent } from './components/adminpanel/adminpanel.componen
     CodemirrorModule,
     MonacoEditorModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [ProblemsApiService],
   bootstrap: [AppComponent]

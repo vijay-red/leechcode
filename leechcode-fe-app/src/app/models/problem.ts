@@ -1,25 +1,27 @@
 export class Problem {
-    Title:string; 
-	TitleSlug:string; 
-	Content:string;
-	Difficulty:string;
-	Likes:number;
-	Dislikes:number;
-	ExampleTestCases:string;
-	Hints:string;
-    constructor(Title:string,TitleSlug:string,Content:string,Difficulty:string,Likes:number,
-        Dislikes:number,
-        ExampleTestCases:string,
-        Hints:string,)
+    
+    title:string; 
+	titleSlug:string; 
+	content:string;
+	difficulty:string;
+	likes:number;
+	dislikes:number;
+	exampleTestCases:string;
+	hints:string;
+    constructor(title:string,titleSlug:string,content:string,difficulty:string,likes:number,
+        dislikes:number,
+        exampleTestCases:string,
+        hints:string,)
         {
-            this.Title = Title;
-            this.TitleSlug = TitleSlug;
-            this.Content = Content;
-            this.Difficulty = Difficulty;
-            this.Likes = Likes;
-            this.Dislikes = Dislikes;
-            this.ExampleTestCases = ExampleTestCases;
-            this.Hints = Hints;
+            
+            this.title = title;
+            this.titleSlug = titleSlug;
+            this.content = content;
+            this.difficulty = difficulty;
+            this.likes = likes;
+            this.dislikes = dislikes;
+            this.exampleTestCases = exampleTestCases;
+            this.hints = hints;
 
     }
 
