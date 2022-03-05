@@ -24,4 +24,8 @@ export class ProblemsApiService {
     let url = "http://localhost:8080/api/v1/problems/"+slug
     return this.http.get(url);
   }
+  deleteProblemBySlug(slug: string){
+    let url = "http://localhost:8080/api/v1/problems/"+slug
+    return this.http.delete(url);
+  }
 }

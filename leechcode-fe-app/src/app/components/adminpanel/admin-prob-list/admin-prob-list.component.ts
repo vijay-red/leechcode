@@ -15,6 +15,13 @@ export class AdminProbListComponent implements OnInit {
   constructor(private pa: ProblemsApiService, private router: Router) { }
 
   ngOnInit(): void {
+    this.getProblems();
+
+    
+  
+  }
+
+  getProblems(){
     this.pa.getProblems()
     .subscribe(data => {
       
@@ -25,9 +32,6 @@ export class AdminProbListComponent implements OnInit {
       
     console.warn("problem object array", this.problems);
     });
-
-    
-  
   }
   
   problemToJSON(json:string){
@@ -41,6 +45,14 @@ export class AdminProbListComponent implements OnInit {
 
   viewProblem(titleSlug:string){
     this.router.navigate(['/problem/',titleSlug]);
+  }
+  deleteProblem(titleSlug:string){
+    this.pa.deleteProblemBySlug(titleSlug).subscribe(data => {
+      console.log(data);
+      this.problems = [];
+      this.getProblems();
+
+    });
   }
 
 }
