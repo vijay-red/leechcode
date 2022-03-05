@@ -2,37 +2,30 @@
 
 <div class="problem-canvas">
   
-    <div class="tab-menu">
-        <div *ngFor="let tab of tabs">
-            <button [className]="(selectedTab === tab) ? 'tab-selected' : 'tab'" (click)="openTab(tab)" href="#">{{
-            tab
-          }}</button>
+  <mat-tab-group>
+    <mat-tab label="Description" style="font-family: 'Montserrat', light;
+    font-weight: bold;"> 
+      <div class="DescriptionTab">
+        <div class="lefthandside">
+          <app-problem-statement></app-problem-statement>
         </div>
-        
-    </div>
-  <ng-container *ngIf="selectedTab === 'Description'">
-    <div class="DescriptionTab">
-      <div class="lefthandside">
-        <app-problem-statement></app-problem-statement>
+        <div class="righthandside">
+        <ngx-codemirror
+        class="editor"
+          [(ngModel)]="originalCode"
+          [options]="{
+            lineNumbers: true,
+            theme: 'material',
+            mode: 'markdown',
+            lineWrapping: true
+          }"
+        ></ngx-codemirror>
+        <button class="submit-button">Submit Code</button>
       </div>
-      <div class="righthandside">
-      <ngx-codemirror
-      class="editor"
-        [(ngModel)]="originalCode"
-        [options]="{
-          lineNumbers: true,
-          theme: 'material',
-          mode: 'markdown',
-          lineWrapping: true
-        }"
-      ></ngx-codemirror>
-      <button class="submit-button">Submit Code</button>
-    </div>
-    </div>
-
-    
-  </ng-container>
-  <ng-container *ngIf="selectedTab === 'Solution'">Solution</ng-container>
-  <ng-container *ngIf="selectedTab === 'Discuss'">Solution</ng-container>
+      </div>
+    </mat-tab>
+    <mat-tab label="Solution"> Content 2 </mat-tab>
+    <mat-tab label="Discuss"> Content 3 </mat-tab>
+  </mat-tab-group>
 </div>
 

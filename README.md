@@ -42,6 +42,21 @@ Running the Backend:
 4. The server will be up and running on port 8080. 
 5. If you wanna check test the rest end points in style, install rest-client plugin for VS code, and open `**.rest` files in server -> documentation.
 
+Testing the Frontend using Cypress:
+1. cd into leechcode-fe-app
+2. Run `npm run cypress:open` to open the Cypress test suite
+3. Click on Run # integration spec to start the tests
+
+Testing the Frontend using Angular unit testing: 
+1. You need to install docker.
+2. From the root directory of the project, do `docker-compose build`
+3. `docker-compose up`
+4. In another terminal cd into leechcode-fe-app
+5. Run `ng serve`
+6. In another terminal Run `ng test` to start the tests
+
+
+
 
 Team Members
  - Yash Tibrewal
