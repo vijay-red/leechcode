@@ -7,9 +7,9 @@ import { ProblemPageComponent } from './components/problem-page/problem-page.com
 import { ProblemStatementComponent } from './components/problem-statement/problem-statement.component';
 import { ExampleComponent } from './components/example/example.component';
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor';
+import { problemList } from './components/problem-list/problem-list.services';
 
-
-
+import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -30,7 +30,6 @@ const routes: Routes = [
     ProblemStatementComponent,
     ExampleComponent,
     HomePageComponent,
-    ProblemListComponent,
     ProblemListComponent
   ],
   imports: [
@@ -38,10 +37,11 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     CodemirrorModule,
     MonacoEditorModule,
+    HttpClientModule,
     FormsModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [problemList],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
