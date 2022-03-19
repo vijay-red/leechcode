@@ -4,8 +4,6 @@ import (
 	"leechcode/db"
 	"leechcode/handlers"
 
-	"github.com/gin-contrib/cors"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -35,6 +33,5 @@ func RunRouter() {
 	routerGroup.GET("test-case/:id", handlers.GetTestCase)
 	routerGroup.GET("test-cases", handlers.GetTestCases)
 
-	router.Use(cors.Default())
 	router.Run()
 }
