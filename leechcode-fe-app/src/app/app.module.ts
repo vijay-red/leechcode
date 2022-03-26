@@ -15,7 +15,7 @@ import { ProblemPageComponent } from './components/problem-page/problem-page.com
 import { ProblemStatementComponent } from './components/problem-statement/problem-statement.component';
 
 
-import { ExampleComponent } from './components/example/example.component';
+
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
@@ -25,19 +25,19 @@ import { AdminProbListComponent } from './components/adminpanel/admin-prob-list/
 
 import { CreateProblemComponent } from './components/adminpanel/create-problem/create-problem.component';
 import { UpdateProblemComponent } from './components/adminpanel/update-problem/update-problem.component';
-import { TestExampleComponent } from './components/problem-page/test-example/test-example.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { SolutionPageComponent } from './components/problem-page/solution-page/solution-page.component';
+import { ProblemDiscussPageComponent } from './components/problem-page/problem-discuss-page/problem-discuss-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProblemPageComponent,
     ProblemStatementComponent,
-    ExampleComponent,
     HomePageComponent,
     ProblemListComponent,
     ProblemListComponent,
@@ -45,8 +45,9 @@ import { MatButtonModule } from '@angular/material/button';
     AdminProbListComponent,
     CreateProblemComponent,
     UpdateProblemComponent,
-    TestExampleComponent,
     NavbarComponent,
+    SolutionPageComponent,
+    ProblemDiscussPageComponent,
     
   ],
   imports: [

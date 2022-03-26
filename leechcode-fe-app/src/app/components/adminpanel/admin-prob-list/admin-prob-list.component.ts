@@ -44,7 +44,7 @@ export class AdminProbListComponent implements OnInit {
   }
 
   viewProblem(titleSlug:string){
-    this.router.navigate(['/problem/',titleSlug]);
+    this.router.navigate(["problem/" + titleSlug + "/description"]);
   }
   deleteProblem(titleSlug:string){
     this.pa.deleteProblemBySlug(titleSlug).subscribe(data => {

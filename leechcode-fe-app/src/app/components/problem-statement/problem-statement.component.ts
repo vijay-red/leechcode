@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Problem } from 'src/app/models/problem';
 import { ProblemsApiService } from 'src/app/models/problems-api.service';
-import { Example } from '../../models/example';
+
 
 @Component({
   selector: 'app-problem-statement',
@@ -10,7 +10,6 @@ import { Example } from '../../models/example';
   styleUrls: ['./problem-statement.component.css']
 })
 export class ProblemStatementComponent implements OnInit {
-  examples:Example[];
   problem = new Problem("","","","",12,12,"",""); 
   data: Object[] = []
   title: string;
@@ -30,18 +29,6 @@ export class ProblemStatementComponent implements OnInit {
       this.difficulty = this.problem.difficulty;
       console.log(this.problem);
     })
-    this.examples = [{
-      index: 0,
-      input: "nums = [2,7,11,15], target = 9",
-      output: "[0,1]",
-      explanation: "Because nums[0] + nums[1] == 9, we return [0, 1]."
-    }, 
-    {
-      index:1,
-      input: "nums = [3,2,4], target = 6",
-      output: "[1,2]",
-      explanation: "null"
-    }]
 
   }
 

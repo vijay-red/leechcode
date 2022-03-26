@@ -6,10 +6,14 @@ import { ProblemPageComponent } from './components/problem-page/problem-page.com
 import { AdminProbListComponent } from './components/adminpanel/admin-prob-list/admin-prob-list.component';
 import { CreateProblemComponent } from './components/adminpanel/create-problem/create-problem.component';
 import { UpdateProblemComponent } from './components/adminpanel/update-problem/update-problem.component';
+import { SolutionPageComponent } from './components/problem-page/solution-page/solution-page.component';
+import { ProblemDiscussPageComponent } from './components/problem-page/problem-discuss-page/problem-discuss-page.component';
 const routes: Routes = [{
   path: 'home', component: HomePageComponent
 }, {path: 'problem', component: ProblemPageComponent 
-}, {path: 'problem/:titleSlug', component: ProblemPageComponent 
+}, {path: 'problem/:titleSlug/discuss', component: ProblemDiscussPageComponent 
+}, {path: 'problem/:titleSlug/description', component: ProblemPageComponent 
+}, {path: 'problem/:titleSlug/solution', component: SolutionPageComponent 
 },{path: 'admin', component: AdminPanelComponent 
 },{path: 'admin/problemlist', component: AdminProbListComponent 
 },{path: 'admin/createproblem', component: CreateProblemComponent 
