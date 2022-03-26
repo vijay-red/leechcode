@@ -1,0 +1,17 @@
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Difficulty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let problem of problems">
+                <td> {{problem.index}}</td>
+                <td> {{problem.title}}</td>
+                <td> {{problem.difficulty}}</td>
+        </tr>
+    </tbody>
+
+</table>
