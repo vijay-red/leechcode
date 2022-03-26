@@ -59,7 +59,7 @@ Testing the Frontend using Angular unit testing:
 
 
 Team Members
- - Yash Tibrewal [Backend]
+ - Yash Tibrewal (github username: yashtibrewal) [Backend]
  - Harish Reddy Bollavaram (harlsh) [Backend]
  - Erik Rosa [Frontend]
  - Vijay Raghav Reddy [Frontend]
