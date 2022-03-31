@@ -7,6 +7,7 @@ import (
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 var (
@@ -23,14 +24,16 @@ func ConnectDatabase() {
 		RawQuery: (&url.Values{"sslmode": []string{"disable"}}).Encode(),
 	}
 	fmt.Println(dsn.String())
-	DB, err = gorm.Open(postgres.Open(dsn.String()), &gorm.Config{})
+	DB, err = gorm.Open(postgres.Open(dsn.String()), &gorm.Config{Logger: logger.Default.LogMode(logger.Info)})
 	if err != nil {
 		panic(err.Error())
 	}
+
 	DB.AutoMigrate(&Problem{})
 	DB.AutoMigrate(&TestCase{})
 	DB.AutoMigrate(&Solution{})
 	DB.AutoMigrate(&User{})
+	DB.AutoMigrate(&CodeSnippet{})
 	fmt.Println("Connected to database.")
 }
 
@@ -39,5 +42,6 @@ func ClearDatabase() {
 	DB.Delete(&TestCase{})
 	DB.Delete(&Solution{})
 	DB.Delete(&User{})
+	DB.Delete(&CodeSnippet{})
 	fmt.Println("Cleared the database.")
 }
