@@ -1,0 +1,10 @@
+.text{
+    font-family: Montserrat;
+    color: white;
+  }
+
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

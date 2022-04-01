@@ -1,23 +1,41 @@
-
-
-<div class="problem-canvas">
-  
-    <div class="tab-menu">
-        <div *ngFor="let tab of tabs">
-            <button [className]="(selectedTab === tab) ? 'tab-selected' : 'tab'" (click)="openTab(tab)" href="#">{{
-            tab
-          }}</button>
-        </div>
-        
+<div class="box">
+  <ul class="nav">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        routerLink="{{ descriptionUrl }}"
+        aria-current="page"
+        href="#"
+        style="color: black; font-family: Montserrat; font-size: 1.5em"
+        >Description</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="{{ solutionUrl }}"
+        href="#"
+        style="color: black; font-family: Montserrat; font-size: 1.5em"
+        >Solution</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="{{ discussUrl }}"
+        href="#"
+        style="color: black; font-family: Montserrat; font-size: 1.5em"
+        >Discuss</a
+      >
+    </li>
+  </ul>
+  <div class="main-row">
+    <div class="lefthandside">
+      <app-problem-statement></app-problem-statement>
     </div>
-  <ng-container *ngIf="selectedTab === 'Description'">
-    <div class="DescriptionTab">
-      <div class="lefthandside">
-        <app-problem-statement></app-problem-statement>
-      </div>
-      <div class="righthandside">
+    <div class="righthandside">
       <ngx-codemirror
-      class="editor"
+        class="editor"
         [(ngModel)]="originalCode"
         [options]="{
           lineNumbers: true,
@@ -28,11 +46,5 @@
       ></ngx-codemirror>
       <button class="submit-button">Submit Code</button>
     </div>
-    </div>
-
-    
-  </ng-container>
-  <ng-container *ngIf="selectedTab === 'Solution'">Solution</ng-container>
-  <ng-container *ngIf="selectedTab === 'Discuss'">Solution</ng-container>
-</div>
+  </div>
 

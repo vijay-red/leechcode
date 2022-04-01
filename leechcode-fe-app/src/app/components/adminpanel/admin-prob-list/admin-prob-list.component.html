@@ -1,0 +1,60 @@
+<div class="box">
+  <ul class="nav">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        routerLink="/admin/problemlist"
+        aria-current="page"
+        href="#"
+        style="color:black; font-family: Montserrat; font-size: 1.5em;"
+        >Problem List</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/admin/createproblem" href="#"
+      style="color:black; font-family: Montserrat; font-size: 1.5em;"
+        >Create Problem</a
+      >
+    </li>
+  </ul>
+  <h3 style="color:black; font-family: Montserrat; font-size: 2em; font-weight: 400;">Problem List</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="header">id</th>
+        <th class="header" >Title</th>
+        <th class="header">Difficulty</th>
+        <th class="header">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let problem of problems; let i = index" [attr.data-index]="i">
+        <td class="data">{{ i }}</td>
+        <td class="data">{{ problem.title }}</td>
+        <td class="data">{{ problem.difficulty }}</td>
+        <td class="data">
+          <button
+            (click)="updateProblem(problem.titleSlug)"
+            class="btn btn-info"
+          >
+            Update
+          </button>
+          <button
+            (click)="viewProblem(problem.titleSlug)"
+            class="btn btn-info"
+            style="margin-left: 10px"
+          >
+            View
+          </button>
+          <button
+            (click)="deleteProblem(problem.titleSlug)"
+            class="btn btn-danger"
+            style="margin-left: 10px"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+.box{
+    background-color: white;
+    border-radius: 20px;
+    width:80%;
+    margin: 0 auto;
+    padding: 1%;
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.56);
+}
+
+.header{
+    font-family: Montserrat; 
+    font-weight:bolder;
+}
+
+.data{
+    font-family: Montserrat; 
+    font-weight:bold;
+}

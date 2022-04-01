@@ -1,0 +1,29 @@
+.lefthandside{
+   
+    flex: 50%;
+ }
+ .righthandside{
+   
+   flex: 50%;
+   margin-top: 5%;
+ }
+ .main-row{
+     display: flex;
+     flex-direction: row;
+     height: 70%;
+     top:10%;
+     margin: 0 auto;
+ }
+ .box{
+     display:flex;
+     flex-direction: column;
+     border-radius: 20px;
+     height:500px;
+     width:80%;
+     margin: 0 auto;
+     padding: 1%;
+     background-color: #F1F1F1;
+     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.56);
+ }
+ 
+ 
